@@ -1,0 +1,68 @@
+Coding challenge: Develop a simple Android/iOS app (with Java, Kotlin or Swift) that features a chat screen with preloaded data.
+
+{
+  "chat": [
+    {
+      "timestamp": "2018-05-28T10:00:00.000Z",
+      "direction": "OUTGOING",
+      "message": "Hello"
+    },
+    {
+      "timestamp": "2018-05-29T11:05:00.000Z",
+      "direction": "INCOMING",
+      "message": "Hi"
+    },
+    {
+      "timestamp": "2018-06-01T22:00:00.000Z",
+      "direction": "OUTGOING",
+      "message": "What is Mudah.my"
+    },
+    {
+      "timestamp": "2018-06-02T22:01:00.000Z",
+      "direction": "INCOMING",
+      "message": "Mudah.my is the most favorite local app in Malaysia for searching, buying and selling pre-loved items. Get best deals at the reasonable prices from over 1,6 million items every day."
+    },
+    {
+      "timestamp": "2018-06-03T09:15:00.000Z",
+      "direction": "OUTGOING",
+      "message": "I see, thanks!"
+    },
+    {
+      "timestamp": "2018-06-04T08:50:00.000Z",
+      "direction": "INCOMING",
+      "message": "No problem!"
+    }
+  ]
+}
+
+1) You can use any libraries that you want but we expect that you craft your own XMLs for the UI part.
+
+2) Hitting send should post a message to https://reqres.in/api/users
+
+Example: POST: https://reqres.in/api/users
+{ "message" : "Hello, world"}
+
+You will get the following JSON response:
+{
+    "message": "Hello, world",
+    "id": "287",
+    "createdAt": "2018-06-30T13:08:04.623Z"
+}
+
+Once successful, append your typed message in the input field to the chat screen. 
+
+
+3) Have the app message the user with a "Are you there?" message if the user has not sent anything in the last minute.
+
+4) (Bonus) Include any sort of testing (Unit or UI testing)
+
+We are really, really interested in your object oriented or functional design
+skills, so please craft the most beautiful code you can.
+
+Once you're done, please send us a standard zip of your source code. 
+If you have problem to upload your work via email, kindly use google drive and share it back to us. 
+
+*** Please do NOT make either your solution or this assignment publicly
+available by, for example, using github or bitbucket or by posting this to a blog or forum.
+
+
