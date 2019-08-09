@@ -23,20 +23,6 @@ class ChatVC: UIViewController {
         return table
     }()
     
-    fileprivate lazy var chatInputView: UIView = {
-        let view = UIView()
-        view.backgroundColor = "#F5F5F5".hexToUIColor()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    fileprivate lazy var chatInputSeparatorLineView: UIView = {
-        let view = UIView()
-        view.backgroundColor = "#B3B3B3".hexToUIColor()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
     fileprivate lazy var textViewField: RSKGrowingTextView = {
         let tv = RSKGrowingTextView()
         tv.minimumNumberOfLines = 1
@@ -89,11 +75,11 @@ class ChatVC: UIViewController {
     
     var chats: [Chat]? = nil {
         didSet {
-            tableView.reloadData()
+            attemptToAssembleGroupedMessages(isPullToRefresh: false)
         }
     }
     
-    var chatsGrouped: [[Chat]]?
+    var chatsGrouped = [[Chat]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,12 +92,12 @@ class ChatVC: UIViewController {
         enableSendButton()
         
         chatService.getChatList { (chats) in
-            self.chats = chats
+            self.chats = chats.chats
         }
     }
 
     fileprivate func initTableView(tableView: UITableView) {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: chatBubbleCellId)
+        tableView.register(ChatBubbleCell.self, forCellReuseIdentifier: chatBubbleCellId)
         
         view.addSubview(tableView)
         
@@ -142,9 +128,10 @@ class ChatVC: UIViewController {
     }
     
     fileprivate func scrollToBottom(animated: Bool) {
-        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
-            return
-        }
+//        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
+//            return
+//        }
+        tableView.reloadData()
         
         let section = chatsGrouped.count - 1
         guard chatsGrouped.indices.contains(section) else {
@@ -170,7 +157,7 @@ class ChatVC: UIViewController {
 //    }
     
     fileprivate func attemptToAssembleGroupedMessages(isPullToRefresh: Bool) {
-        chatsGrouped?.removeAll()
+        chatsGrouped.removeAll()
         
         guard let chats = chats else {
             return
@@ -185,24 +172,28 @@ class ChatVC: UIViewController {
         
         sortedKeys.forEach { (key) in
             let values = groupedMessages[key]
-            chatsGrouped?.append(values ?? [])
+            chatsGrouped.append(values ?? [])
         }
         
         DispatchQueue.main.async {
-//            self.updateMessage(isPullToRefresh: isPullToRefresh)
+            self.scrollToBottom(animated: false)
         }
     }
 }
 
 extension ChatVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+//        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
+//            return 0
+//        }
+        
+        return chatsGrouped[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
-            return UITableViewCell()
-        }
+//        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
+//            return UITableViewCell()
+//        }
         
         let row = indexPath.row
         
@@ -225,17 +216,17 @@ extension ChatVC: UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
-            return 0
-        }
+//        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
+//            return 0
+//        }
         
         return chatsGrouped.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
-            return nil
-        }
+//        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
+//            return nil
+//        }
         
         if let firstMessageInSection = chatsGrouped[section].first, let timestamp = firstMessageInSection.generateDateFromTimestampString() {
             let label = DateHeaderLabel()
@@ -264,9 +255,9 @@ extension ChatVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
-            return
-        }
+//        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
+//            return
+//        }
         
         let chatDirection = chatsGrouped[indexPath.section][indexPath.row].direction
         

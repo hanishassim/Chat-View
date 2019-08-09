@@ -14,7 +14,7 @@ extension Notification.Name {
     static let DidSaveContactInfo = Notification.Name("DidSaveContactInfo")
 }
 
-typealias chatListCompletion = (_ chats: [Chat]) -> Void
+typealias chatListCompletion = (_ chats: Root) -> Void
 
 enum ChatDirection: String, Codable {
     case incoming = "INCOMING"

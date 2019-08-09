@@ -8,6 +8,13 @@
 
 import Foundation
 
+struct Root: Decodable {
+    private enum CodingKeys: String, CodingKey {
+        case chats = "chat"
+    }
+    let chats: [Chat]
+}
+
 struct Chat: Codable {
     let timestamp: String
     let direction: ChatDirection

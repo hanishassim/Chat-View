@@ -17,7 +17,7 @@ class BubbleView: UIView {
     }
     
     var incomingColor = UIColor(white: 0.9, alpha: 1)
-    var outgoingColor = "#B3E1ED".hexToUIColor()
+    var outgoingColor = accentColor
     
     override func draw(_ rect: CGRect) {
         let width = rect.width

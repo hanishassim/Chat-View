@@ -63,7 +63,8 @@ class ChatBubbleCell: TableBaseCell {
         didSet {
             bubbleView.direction = direction
             
-            timestampLabel.textColor = direction == .incoming ? UIColor.black.withAlphaComponent(0.5) : .gray
+            timestampLabel.textColor = direction == .incoming ? UIColor.black.withAlphaComponent(0.5) : .white
+            messageLabel.textColor = direction == .incoming ? .black : .white
             
             if direction == .outgoing {
                 NSLayoutConstraint.deactivate([bubbleViewLeadingConstraint])

@@ -23,7 +23,7 @@ class DateHeaderLabel: UILabel {
         super.init(frame: frame)
         
         backgroundColor = UIColor(white: 0.9, alpha: 1)
-        textColor = accentColor
+        textColor = .gray
         textAlignment = .center
         translatesAutoresizingMaskIntoConstraints = false
         font = UIFont.systemFont(ofSize: 12)

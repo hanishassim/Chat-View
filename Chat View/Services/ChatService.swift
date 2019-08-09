@@ -18,11 +18,11 @@ class ChatService {
     
     // MARK:- To decode JSON file to conform by ContactInfo object
     fileprivate func decodeFileToChat(_ filename: URL, _ completion: chatListCompletion) throws {
-        let data = try Data(contentsOf: URL(fileURLWithPath: filename.path), options: .mappedIfSafe)
+        let data = try Data(contentsOf: filename, options: .mappedIfSafe)
         //Convert to JSON format
         do {
             let decoder = JSONDecoder()
-            let jsonResult = try decoder.decode([Chat].self, from: data)
+            let jsonResult = try decoder.decode(Root.self, from: data)
             
             completion(jsonResult)
         } catch let jsonError {
@@ -32,9 +32,9 @@ class ChatService {
     
     // MARK: To load JSON from Bundle (XCode directory)
     fileprivate func loadBundleJSON(completion: chatListCompletion) {
-        if let path = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "Resources") {
+        if let path = Bundle.main.url(forResource: "data", withExtension: "json") {
             do {
-                try decodeFileToChat(URL.init(string: path)!, completion)
+                try decodeFileToChat(path, completion)
             } catch {
                 print("The file data.json could not be loaded")
             }
