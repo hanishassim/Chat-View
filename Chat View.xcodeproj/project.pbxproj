@@ -16,6 +16,16 @@
 		0772E47F22FD56C70003CBB0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0772E47D22FD56C70003CBB0 /* Constants.swift */; };
 		0772E48022FD56C70003CBB0 /* String Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0772E47E22FD56C70003CBB0 /* String Extensions.swift */; };
 		07B9D9E322FD5F8600B1CA65 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B9D9E222FD5F8600B1CA65 /* ChatVC.swift */; };
+		07B9D9E522FD618E00B1CA65 /* Test Question.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07B9D9E422FD618E00B1CA65 /* Test Question.txt */; };
+		07B9D9E722FD61DC00B1CA65 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 07B9D9E622FD61DC00B1CA65 /* data.json */; };
+		07B9D9EA22FD623E00B1CA65 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B9D9E922FD623E00B1CA65 /* Chat.swift */; };
+		07B9D9ED22FD630F00B1CA65 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B9D9EC22FD630F00B1CA65 /* ChatService.swift */; };
+		07B9D9F022FD892300B1CA65 /* ChatBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B9D9EF22FD892300B1CA65 /* ChatBubbleCell.swift */; };
+		07B9D9F222FD893900B1CA65 /* TableBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B9D9F122FD893900B1CA65 /* TableBaseCell.swift */; };
+		07B9D9F422FD89AB00B1CA65 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B9D9F322FD89AB00B1CA65 /* BubbleView.swift */; };
+		07B9D9F622FD8A8D00B1CA65 /* UIView Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B9D9F522FD8A8D00B1CA65 /* UIView Extensions.swift */; };
+		07B9D9F822FD8CF400B1CA65 /* Date Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B9D9F722FD8CF400B1CA65 /* Date Extensions.swift */; };
+		07B9D9FA22FD8F8C00B1CA65 /* DateHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B9D9F922FD8F8C00B1CA65 /* DateHeaderLabel.swift */; };
 		A669643F4CC853DEA42F1EB1 /* Pods_Chat_View.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67001E5954B402B0C30D193C /* Pods_Chat_View.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +41,16 @@
 		0772E47D22FD56C70003CBB0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0772E47E22FD56C70003CBB0 /* String Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String Extensions.swift"; sourceTree = "<group>"; };
 		07B9D9E222FD5F8600B1CA65 /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		07B9D9E422FD618E00B1CA65 /* Test Question.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Test Question.txt"; sourceTree = SOURCE_ROOT; };
+		07B9D9E622FD61DC00B1CA65 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		07B9D9E922FD623E00B1CA65 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		07B9D9EC22FD630F00B1CA65 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
+		07B9D9EF22FD892300B1CA65 /* ChatBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleCell.swift; sourceTree = "<group>"; };
+		07B9D9F122FD893900B1CA65 /* TableBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableBaseCell.swift; sourceTree = "<group>"; };
+		07B9D9F322FD89AB00B1CA65 /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
+		07B9D9F522FD8A8D00B1CA65 /* UIView Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView Extensions.swift"; sourceTree = "<group>"; };
+		07B9D9F722FD8CF400B1CA65 /* Date Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date Extensions.swift"; sourceTree = "<group>"; };
+		07B9D9F922FD8F8C00B1CA65 /* DateHeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeaderLabel.swift; sourceTree = "<group>"; };
 		67001E5954B402B0C30D193C /* Pods_Chat_View.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chat_View.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA3D63DD9A89687B2CD4C59 /* Pods-Chat View.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat View.release.xcconfig"; path = "Target Support Files/Pods-Chat View/Pods-Chat View.release.xcconfig"; sourceTree = "<group>"; };
 		DBCBE9F5994CAC42D56FBBE2 /* Pods-Chat View.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat View.debug.xcconfig"; path = "Target Support Files/Pods-Chat View/Pods-Chat View.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +89,9 @@
 		0772E46522FD29B70003CBB0 /* Chat View */ = {
 			isa = PBXGroup;
 			children = (
+				07B9D9EB22FD62F200B1CA65 /* Services */,
+				07B9D9E822FD621E00B1CA65 /* Model */,
+				07B9D9E422FD618E00B1CA65 /* Test Question.txt */,
 				072A402C22FD59DC006F772A /* Podfile */,
 				0772E47A22FD56460003CBB0 /* Helpers */,
 				0772E47922FD2B1E0003CBB0 /* Resources */,
@@ -85,6 +108,10 @@
 				07B9D9E222FD5F8600B1CA65 /* ChatVC.swift */,
 				0772E46A22FD29B70003CBB0 /* Main.storyboard */,
 				0772E46F22FD29B80003CBB0 /* LaunchScreen.storyboard */,
+				07B9D9EF22FD892300B1CA65 /* ChatBubbleCell.swift */,
+				07B9D9F122FD893900B1CA65 /* TableBaseCell.swift */,
+				07B9D9F322FD89AB00B1CA65 /* BubbleView.swift */,
+				07B9D9F922FD8F8C00B1CA65 /* DateHeaderLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -93,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				0772E46D22FD29B80003CBB0 /* Assets.xcassets */,
+				07B9D9E622FD61DC00B1CA65 /* data.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -103,8 +131,26 @@
 				0772E47D22FD56C70003CBB0 /* Constants.swift */,
 				0772E47E22FD56C70003CBB0 /* String Extensions.swift */,
 				0772E47B22FD56A10003CBB0 /* RandomCodeGenerator.swift */,
+				07B9D9F522FD8A8D00B1CA65 /* UIView Extensions.swift */,
+				07B9D9F722FD8CF400B1CA65 /* Date Extensions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		07B9D9E822FD621E00B1CA65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07B9D9E922FD623E00B1CA65 /* Chat.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		07B9D9EB22FD62F200B1CA65 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				07B9D9EC22FD630F00B1CA65 /* ChatService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		14191605C0C2B7F8011B2CEE /* Pods */ = {
@@ -185,8 +231,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0772E47122FD29B80003CBB0 /* LaunchScreen.storyboard in Resources */,
+				07B9D9E722FD61DC00B1CA65 /* data.json in Resources */,
 				0772E46E22FD29B80003CBB0 /* Assets.xcassets in Resources */,
 				072A402D22FD59DC006F772A /* Podfile in Resources */,
+				07B9D9E522FD618E00B1CA65 /* Test Question.txt in Resources */,
 				0772E46C22FD29B70003CBB0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,10 +295,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B9D9F422FD89AB00B1CA65 /* BubbleView.swift in Sources */,
 				07B9D9E322FD5F8600B1CA65 /* ChatVC.swift in Sources */,
+				07B9D9EA22FD623E00B1CA65 /* Chat.swift in Sources */,
+				07B9D9FA22FD8F8C00B1CA65 /* DateHeaderLabel.swift in Sources */,
+				07B9D9ED22FD630F00B1CA65 /* ChatService.swift in Sources */,
+				07B9D9F022FD892300B1CA65 /* ChatBubbleCell.swift in Sources */,
 				0772E48022FD56C70003CBB0 /* String Extensions.swift in Sources */,
+				07B9D9F822FD8CF400B1CA65 /* Date Extensions.swift in Sources */,
+				07B9D9F622FD8A8D00B1CA65 /* UIView Extensions.swift in Sources */,
 				0772E47C22FD56A10003CBB0 /* RandomCodeGenerator.swift in Sources */,
 				0772E46722FD29B70003CBB0 /* AppDelegate.swift in Sources */,
+				07B9D9F222FD893900B1CA65 /* TableBaseCell.swift in Sources */,
 				0772E47F22FD56C70003CBB0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,24 @@
+//
+//  Chat.swift
+//  Chat View
+//
+//  Created by H on 09/08/2019.
+//  Copyright © 2019 H. All rights reserved.
+//
+
+import Foundation
+
+struct Chat: Codable {
+    let timestamp: String
+    let direction: ChatDirection
+    let message: String
+    
+    func generateDateFromTimestampString() -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        if let date = formatter.date(from: timestamp) {
+            return date
+        }
+        return nil
+    }
+}

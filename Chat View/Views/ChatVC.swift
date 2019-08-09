@@ -70,6 +70,8 @@ class ChatVC: UIViewController {
     }()
     
     fileprivate let chatBubbleCellId = "chatBubbleCell"
+    fileprivate let chatService = ChatService()
+    fileprivate let bubbleFooterSpacing: CGFloat = 16
     
     fileprivate func enableSendButton() {
         let isTextFieldEmpty = textViewField.text.isEmpty
@@ -85,6 +87,14 @@ class ChatVC: UIViewController {
         }
     }
     
+    var chats: [Chat]? = nil {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    var chatsGrouped: [[Chat]]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -94,6 +104,10 @@ class ChatVC: UIViewController {
         initTableView(tableView: self.tableView)
         
         enableSendButton()
+        
+        chatService.getChatList { (chats) in
+            self.chats = chats
+        }
     }
 
     fileprivate func initTableView(tableView: UITableView) {
@@ -126,6 +140,58 @@ class ChatVC: UIViewController {
             NSLayoutConstraint(item: sendButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 45),
             ])
     }
+    
+    fileprivate func scrollToBottom(animated: Bool) {
+        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
+            return
+        }
+        
+        let section = chatsGrouped.count - 1
+        guard chatsGrouped.indices.contains(section) else {
+            return
+        }
+        
+        let row = chatsGrouped[section].count - 1
+        
+        guard chatsGrouped[section].indices.contains(row) else {
+            return
+        }
+        
+        tableView.scrollToRow(at: IndexPath(row: row, section: section), at: .bottom, animated: animated)
+        tableView.contentOffset.y = tableView.contentOffset.y + bubbleFooterSpacing
+    }
+    
+//    func sendButtonTouchUp(inside sender: Any) {
+//        guard let text = textViewInputMessage.text, text.count > 0 && text.isNotEmpty else {
+//            return
+//        }
+//
+//        POSTMessage(messageType: "TEXT", file: "", message: text)
+//    }
+    
+    fileprivate func attemptToAssembleGroupedMessages(isPullToRefresh: Bool) {
+        chatsGrouped?.removeAll()
+        
+        guard let chats = chats else {
+            return
+        }
+        
+        let groupedMessages = Dictionary(grouping: chats) { (element) -> Date in
+            return element.generateDateFromTimestampString()!.reduceToMonthDayYear()
+        }
+        
+        // provide a sorting for your keys somehow
+        let sortedKeys = groupedMessages.keys.sorted()
+        
+        sortedKeys.forEach { (key) in
+            let values = groupedMessages[key]
+            chatsGrouped?.append(values ?? [])
+        }
+        
+        DispatchQueue.main.async {
+//            self.updateMessage(isPullToRefresh: isPullToRefresh)
+        }
+    }
 }
 
 extension ChatVC: UITableViewDataSource {
@@ -134,15 +200,87 @@ extension ChatVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
+            return UITableViewCell()
+        }
+        
         let row = indexPath.row
         
-        return UITableViewCell()
+        let chatDirection = chatsGrouped[indexPath.section][row].direction
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: chatBubbleCellId, for: indexPath) as! ChatBubbleCell
+        
+        cell.direction = chatDirection
+        
+        let messageText = chatsGrouped[indexPath.section][row].message
+        
+        if messageText.trimmingCharacters(in: [" "]).isEmpty {
+            cell.isHidden = true
+        }
+        
+        cell.cellText = messageText
+        cell.timestamp = chatsGrouped[indexPath.section][row].generateDateFromTimestampString()?.printTime()
+        
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
+            return 0
+        }
+        
+        return chatsGrouped.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
+            return nil
+        }
+        
+        if let firstMessageInSection = chatsGrouped[section].first, let timestamp = firstMessageInSection.generateDateFromTimestampString() {
+            let label = DateHeaderLabel()
+            label.text = timestamp.printDayAndDate()
+            
+            let containerView = UIView()
+            containerView.addSubview(label)
+            label.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+            label.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+            
+            return containerView
+        }
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.isUserInteractionEnabled = false
+        return view
     }
 }
 
 extension ChatVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
+            return
+        }
+        
+        let chatDirection = chatsGrouped[indexPath.section][indexPath.row].direction
+        
+        if let cell = cell as? ChatBubbleCell {
+            cell.direction = chatDirection
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return bubbleFooterSpacing
     }
 }
 
