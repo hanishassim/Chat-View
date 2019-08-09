@@ -1,0 +1,20 @@
+PODS:
+  - RSKGrowingTextView (4.0.5):
+    - RSKPlaceholderTextView (= 4.0.0)
+  - RSKPlaceholderTextView (4.0.0)
+
+DEPENDENCIES:
+  - RSKGrowingTextView
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RSKGrowingTextView
+    - RSKPlaceholderTextView
+
+SPEC CHECKSUMS:
+  RSKGrowingTextView: aade5bc3ae2a202bd3d70674d605b76117034040
+  RSKPlaceholderTextView: 15f1dc1883e103ea605874b863f19ff6b08496d5
+
+PODFILE CHECKSUM: 4c1e9179c137155bed272640d2c77e828cc427e4
+
+COCOAPODS: 1.6.1

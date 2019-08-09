@@ -1,0 +1,788 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D761DF4E691CA559EB567ACF816A509 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1078E3054C1D982543C93A45BE62452 /* Foundation.framework */; };
+		3144B75D902C10A8BBB32BA139ECC3A5 /* RSKGrowingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07B8CC324C5850B481E3AE7BE6885F /* RSKGrowingTextView.swift */; };
+		448B80186CF95C30DD39E9A5861F5ADE /* Pods-Chat View-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B91B85D26FB0732C79649AA397078F68 /* Pods-Chat View-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B83123B9FF5118645BDABE33C5A77FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1078E3054C1D982543C93A45BE62452 /* Foundation.framework */; };
+		766CD9AF851A04CF382B639CEA7F77ED /* RSKPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E8EDD6A2D6DEE2526F91F6F9E1932 /* RSKPlaceholderTextView.swift */; };
+		98EE5A0BA6887443E15460A6BF7A4012 /* RSKPlaceholderTextView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 19ED03FC78F5562E75A084E1DA1C1053 /* RSKPlaceholderTextView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9BC334BD41ABC44F3E4B4E1FDAC883C2 /* Pods-Chat View-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EABD36110AB88778426DA939CF910393 /* Pods-Chat View-dummy.m */; };
+		A8A6330D7CDA8B63D2C17D92749FEDD5 /* RSKGrowingTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = C8FD7F765CF33A8016DAF12E40BBBE06 /* RSKGrowingTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AFE3ADEEEEBAFACE9C04F6E041A43EB0 /* RSKPlaceholderTextView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9063EA1020016BAA6144E224E064F90 /* RSKPlaceholderTextView.framework */; };
+		C2ED1DC06DE351BD27D73EDFE99AC06D /* RSKPlaceholderTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E557FA2C93BACB303B9128C69DD7A9 /* RSKPlaceholderTextView-dummy.m */; };
+		C8F24C995444096A4CACE2C34EC4E782 /* RSKGrowingTextView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C5391746FCDA1E41C02DF9746F94631 /* RSKGrowingTextView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7B7BF94BAD4B96C6DB8A0A515835F04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD03CB3941CB9723FA2A664192109518 /* UIKit.framework */; };
+		EB02891CEBFDCED8CC06EF45BF280C96 /* RSKGrowingTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81079C15EA151B58D024AC9011A1FA2B /* RSKGrowingTextView-dummy.m */; };
+		F84032BC65DDC0A16E6D1B576448672B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1078E3054C1D982543C93A45BE62452 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2D4886A44B20A6CDAE8FA38CCF51A176 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E49D853365E6D5C57EBE176C5783984F;
+			remoteInfo = RSKPlaceholderTextView;
+		};
+		9B9DDC216333076484B2953A0ED45F49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E49D853365E6D5C57EBE176C5783984F;
+			remoteInfo = RSKPlaceholderTextView;
+		};
+		E726B42EFD40E01273C698C0E76D2E25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A521DD8B92B42EB87B74C2601C4C4A5;
+			remoteInfo = RSKGrowingTextView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F6FB4DA724202CDF1AE5400903B4F16 /* RSKGrowingTextView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RSKGrowingTextView-Info.plist"; sourceTree = "<group>"; };
+		0F8DE73D32FE15F0EBE70EB0615F73FF /* RSKPlaceholderTextView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RSKPlaceholderTextView.xcconfig; sourceTree = "<group>"; };
+		1424165E67CC657F725BC2B7920324AE /* Pods-Chat View-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Chat View-Info.plist"; sourceTree = "<group>"; };
+		19ED03FC78F5562E75A084E1DA1C1053 /* RSKPlaceholderTextView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSKPlaceholderTextView-umbrella.h"; sourceTree = "<group>"; };
+		1A320385C5EE456720E4728AD11C4E9A /* RSKGrowingTextView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RSKGrowingTextView.modulemap; sourceTree = "<group>"; };
+		1A3E8EDD6A2D6DEE2526F91F6F9E1932 /* RSKPlaceholderTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RSKPlaceholderTextView.swift; path = RSKPlaceholderTextView/RSKPlaceholderTextView.swift; sourceTree = "<group>"; };
+		1C5391746FCDA1E41C02DF9746F94631 /* RSKGrowingTextView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSKGrowingTextView-umbrella.h"; sourceTree = "<group>"; };
+		1D78302105706A26FD7CD7895D6A1203 /* Pods_Chat_View.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chat_View.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		218BB6207CCCE781C9B63413D7F1A4BE /* RSKPlaceholderTextView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RSKPlaceholderTextView.modulemap; sourceTree = "<group>"; };
+		227F26BF4440EE8FE8DC28AFCB291249 /* RSKPlaceholderTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSKPlaceholderTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25AD6CF2C1DBB23F583656E0950CE462 /* Pods-Chat View.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Chat View.modulemap"; sourceTree = "<group>"; };
+		28E07B47040426702A7CBB1E0B1A3B99 /* Pods-Chat View-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Chat View-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3573DBDBEA729C9BDB5DD3497979B90B /* Pods-Chat View-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Chat View-frameworks.sh"; sourceTree = "<group>"; };
+		56E557FA2C93BACB303B9128C69DD7A9 /* RSKPlaceholderTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RSKPlaceholderTextView-dummy.m"; sourceTree = "<group>"; };
+		5F07B8CC324C5850B481E3AE7BE6885F /* RSKGrowingTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RSKGrowingTextView.swift; path = RSKGrowingTextView/RSKGrowingTextView.swift; sourceTree = "<group>"; };
+		6428CD5BE7901A3996DC4D5B3D7A8BA4 /* RSKGrowingTextView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSKGrowingTextView-prefix.pch"; sourceTree = "<group>"; };
+		73B6C9DA5B97FA0760C2768AE08D452E /* RSKGrowingTextView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RSKGrowingTextView.xcconfig; sourceTree = "<group>"; };
+		81079C15EA151B58D024AC9011A1FA2B /* RSKGrowingTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RSKGrowingTextView-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A90A55A821CE6E82BA204F7461DC47DE /* Pods-Chat View.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Chat View.release.xcconfig"; sourceTree = "<group>"; };
+		A96B48AA7A57E1E5B9788194F20EE134 /* RSKGrowingTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSKGrowingTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B91B85D26FB0732C79649AA397078F68 /* Pods-Chat View-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Chat View-umbrella.h"; sourceTree = "<group>"; };
+		C5AFFEBA1D9A0DBBBCEA634116871D02 /* Pods-Chat View-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Chat View-acknowledgements.plist"; sourceTree = "<group>"; };
+		C8FD7F765CF33A8016DAF12E40BBBE06 /* RSKGrowingTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RSKGrowingTextView.h; path = RSKGrowingTextView/RSKGrowingTextView.h; sourceTree = "<group>"; };
+		CD05FA00D69CBE3D66EB4843B3752843 /* RSKPlaceholderTextView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RSKPlaceholderTextView-Info.plist"; sourceTree = "<group>"; };
+		DD03CB3941CB9723FA2A664192109518 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		E1D4CE5700EB468B05693E7D357CD693 /* RSKPlaceholderTextView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSKPlaceholderTextView-prefix.pch"; sourceTree = "<group>"; };
+		EABD36110AB88778426DA939CF910393 /* Pods-Chat View-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Chat View-dummy.m"; sourceTree = "<group>"; };
+		F1078E3054C1D982543C93A45BE62452 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F329EBCBAE833247C77CF4C9A03204FF /* Pods-Chat View.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Chat View.debug.xcconfig"; sourceTree = "<group>"; };
+		F9063EA1020016BAA6144E224E064F90 /* RSKPlaceholderTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSKPlaceholderTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		475FBC97BA8A3FF562BE79D7A9ABCF54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F84032BC65DDC0A16E6D1B576448672B /* Foundation.framework in Frameworks */,
+				AFE3ADEEEEBAFACE9C04F6E041A43EB0 /* RSKPlaceholderTextView.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F2F0FA77EA686023C0AEBA8B790CAF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B83123B9FF5118645BDABE33C5A77FB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9A107506C9226D601C85183AADBDA4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D761DF4E691CA559EB567ACF816A509 /* Foundation.framework in Frameworks */,
+				D7B7BF94BAD4B96C6DB8A0A515835F04 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E0B8E649C99B39F61ECE9E30BEC9913 /* RSKGrowingTextView */ = {
+			isa = PBXGroup;
+			children = (
+				C8FD7F765CF33A8016DAF12E40BBBE06 /* RSKGrowingTextView.h */,
+				5F07B8CC324C5850B481E3AE7BE6885F /* RSKGrowingTextView.swift */,
+				369A2A132EB629C638728943E700B63D /* Support Files */,
+			);
+			path = RSKGrowingTextView;
+			sourceTree = "<group>";
+		};
+		2AB9ED985179B12EDD0FDCAEAAE79A44 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F1078E3054C1D982543C93A45BE62452 /* Foundation.framework */,
+				DD03CB3941CB9723FA2A664192109518 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		34944C89AA69A934CD719E7640245022 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8AF5432D9572E6950DD8686B3C4F9F78 /* Pods-Chat View */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		369A2A132EB629C638728943E700B63D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A320385C5EE456720E4728AD11C4E9A /* RSKGrowingTextView.modulemap */,
+				73B6C9DA5B97FA0760C2768AE08D452E /* RSKGrowingTextView.xcconfig */,
+				81079C15EA151B58D024AC9011A1FA2B /* RSKGrowingTextView-dummy.m */,
+				0F6FB4DA724202CDF1AE5400903B4F16 /* RSKGrowingTextView-Info.plist */,
+				6428CD5BE7901A3996DC4D5B3D7A8BA4 /* RSKGrowingTextView-prefix.pch */,
+				1C5391746FCDA1E41C02DF9746F94631 /* RSKGrowingTextView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RSKGrowingTextView";
+			sourceTree = "<group>";
+		};
+		4A0AC250DAC0A3DA52D4B0047ADC82B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F9063EA1020016BAA6144E224E064F90 /* RSKPlaceholderTextView.framework */,
+				2AB9ED985179B12EDD0FDCAEAAE79A44 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		732C28EC864B41FB6A4FE48F10AF480A /* RSKPlaceholderTextView */ = {
+			isa = PBXGroup;
+			children = (
+				1A3E8EDD6A2D6DEE2526F91F6F9E1932 /* RSKPlaceholderTextView.swift */,
+				E4A1593FFAB35A79EEEA20E8FB29DFD3 /* Support Files */,
+			);
+			path = RSKPlaceholderTextView;
+			sourceTree = "<group>";
+		};
+		74BD6F87AE1A8211EC28F1D004D7FCA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E0B8E649C99B39F61ECE9E30BEC9913 /* RSKGrowingTextView */,
+				732C28EC864B41FB6A4FE48F10AF480A /* RSKPlaceholderTextView */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8AF5432D9572E6950DD8686B3C4F9F78 /* Pods-Chat View */ = {
+			isa = PBXGroup;
+			children = (
+				25AD6CF2C1DBB23F583656E0950CE462 /* Pods-Chat View.modulemap */,
+				28E07B47040426702A7CBB1E0B1A3B99 /* Pods-Chat View-acknowledgements.markdown */,
+				C5AFFEBA1D9A0DBBBCEA634116871D02 /* Pods-Chat View-acknowledgements.plist */,
+				EABD36110AB88778426DA939CF910393 /* Pods-Chat View-dummy.m */,
+				3573DBDBEA729C9BDB5DD3497979B90B /* Pods-Chat View-frameworks.sh */,
+				1424165E67CC657F725BC2B7920324AE /* Pods-Chat View-Info.plist */,
+				B91B85D26FB0732C79649AA397078F68 /* Pods-Chat View-umbrella.h */,
+				F329EBCBAE833247C77CF4C9A03204FF /* Pods-Chat View.debug.xcconfig */,
+				A90A55A821CE6E82BA204F7461DC47DE /* Pods-Chat View.release.xcconfig */,
+			);
+			name = "Pods-Chat View";
+			path = "Target Support Files/Pods-Chat View";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				4A0AC250DAC0A3DA52D4B0047ADC82B1 /* Frameworks */,
+				74BD6F87AE1A8211EC28F1D004D7FCA3 /* Pods */,
+				EE87178F99E585DBEF2802B5028542B1 /* Products */,
+				34944C89AA69A934CD719E7640245022 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		E4A1593FFAB35A79EEEA20E8FB29DFD3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				218BB6207CCCE781C9B63413D7F1A4BE /* RSKPlaceholderTextView.modulemap */,
+				0F8DE73D32FE15F0EBE70EB0615F73FF /* RSKPlaceholderTextView.xcconfig */,
+				56E557FA2C93BACB303B9128C69DD7A9 /* RSKPlaceholderTextView-dummy.m */,
+				CD05FA00D69CBE3D66EB4843B3752843 /* RSKPlaceholderTextView-Info.plist */,
+				E1D4CE5700EB468B05693E7D357CD693 /* RSKPlaceholderTextView-prefix.pch */,
+				19ED03FC78F5562E75A084E1DA1C1053 /* RSKPlaceholderTextView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RSKPlaceholderTextView";
+			sourceTree = "<group>";
+		};
+		EE87178F99E585DBEF2802B5028542B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D78302105706A26FD7CD7895D6A1203 /* Pods_Chat_View.framework */,
+				A96B48AA7A57E1E5B9788194F20EE134 /* RSKGrowingTextView.framework */,
+				227F26BF4440EE8FE8DC28AFCB291249 /* RSKPlaceholderTextView.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2AEC34D1D07A7E1AFBD37E0D283843D9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98EE5A0BA6887443E15460A6BF7A4012 /* RSKPlaceholderTextView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		487B78BBDC0946CE9D0116459EB37BFE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8F24C995444096A4CACE2C34EC4E782 /* RSKGrowingTextView-umbrella.h in Headers */,
+				A8A6330D7CDA8B63D2C17D92749FEDD5 /* RSKGrowingTextView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF0D01E57858F70666AF83C44845B86E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				448B80186CF95C30DD39E9A5861F5ADE /* Pods-Chat View-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1A521DD8B92B42EB87B74C2601C4C4A5 /* RSKGrowingTextView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56A433920843ADC7D997E3CB45929E67 /* Build configuration list for PBXNativeTarget "RSKGrowingTextView" */;
+			buildPhases = (
+				487B78BBDC0946CE9D0116459EB37BFE /* Headers */,
+				B46D2D67BA94A0A64243B9F9FC0BF8F3 /* Sources */,
+				475FBC97BA8A3FF562BE79D7A9ABCF54 /* Frameworks */,
+				22E09C76CB47474025F26C837BA32481 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				536A812FE0110D2219598B415A0EC06C /* PBXTargetDependency */,
+			);
+			name = RSKGrowingTextView;
+			productName = RSKGrowingTextView;
+			productReference = A96B48AA7A57E1E5B9788194F20EE134 /* RSKGrowingTextView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4980AB199A465FE9E9402AAA04FB3386 /* Pods-Chat View */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F543ECBE8090B2EBA79801B8839CCAFF /* Build configuration list for PBXNativeTarget "Pods-Chat View" */;
+			buildPhases = (
+				FF0D01E57858F70666AF83C44845B86E /* Headers */,
+				B9BAC1CDB849D729C77B54F69C9FB503 /* Sources */,
+				4F2F0FA77EA686023C0AEBA8B790CAF9 /* Frameworks */,
+				B8403EABBE1E67BB46ABF77CF49DCBC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E79C06E39583C925F146C0FB3FF95F19 /* PBXTargetDependency */,
+				6FAAF4300766C1FC8B71B67E690B9496 /* PBXTargetDependency */,
+			);
+			name = "Pods-Chat View";
+			productName = "Pods-Chat View";
+			productReference = 1D78302105706A26FD7CD7895D6A1203 /* Pods_Chat_View.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E49D853365E6D5C57EBE176C5783984F /* RSKPlaceholderTextView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7A20F7A20259DFC5CB3590944C8A15C /* Build configuration list for PBXNativeTarget "RSKPlaceholderTextView" */;
+			buildPhases = (
+				2AEC34D1D07A7E1AFBD37E0D283843D9 /* Headers */,
+				506EE01D7C378FDEA31C6F6AAC79652C /* Sources */,
+				E9A107506C9226D601C85183AADBDA4E /* Frameworks */,
+				471F293E2EC86D550CF9776F7CB311A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RSKPlaceholderTextView;
+			productName = RSKPlaceholderTextView;
+			productReference = 227F26BF4440EE8FE8DC28AFCB291249 /* RSKPlaceholderTextView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 1020;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = EE87178F99E585DBEF2802B5028542B1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4980AB199A465FE9E9402AAA04FB3386 /* Pods-Chat View */,
+				1A521DD8B92B42EB87B74C2601C4C4A5 /* RSKGrowingTextView */,
+				E49D853365E6D5C57EBE176C5783984F /* RSKPlaceholderTextView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22E09C76CB47474025F26C837BA32481 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		471F293E2EC86D550CF9776F7CB311A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8403EABBE1E67BB46ABF77CF49DCBC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		506EE01D7C378FDEA31C6F6AAC79652C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2ED1DC06DE351BD27D73EDFE99AC06D /* RSKPlaceholderTextView-dummy.m in Sources */,
+				766CD9AF851A04CF382B639CEA7F77ED /* RSKPlaceholderTextView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B46D2D67BA94A0A64243B9F9FC0BF8F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB02891CEBFDCED8CC06EF45BF280C96 /* RSKGrowingTextView-dummy.m in Sources */,
+				3144B75D902C10A8BBB32BA139ECC3A5 /* RSKGrowingTextView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9BAC1CDB849D729C77B54F69C9FB503 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BC334BD41ABC44F3E4B4E1FDAC883C2 /* Pods-Chat View-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		536A812FE0110D2219598B415A0EC06C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RSKPlaceholderTextView;
+			target = E49D853365E6D5C57EBE176C5783984F /* RSKPlaceholderTextView */;
+			targetProxy = 2D4886A44B20A6CDAE8FA38CCF51A176 /* PBXContainerItemProxy */;
+		};
+		6FAAF4300766C1FC8B71B67E690B9496 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RSKPlaceholderTextView;
+			target = E49D853365E6D5C57EBE176C5783984F /* RSKPlaceholderTextView */;
+			targetProxy = 9B9DDC216333076484B2953A0ED45F49 /* PBXContainerItemProxy */;
+		};
+		E79C06E39583C925F146C0FB3FF95F19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RSKGrowingTextView;
+			target = 1A521DD8B92B42EB87B74C2601C4C4A5 /* RSKGrowingTextView */;
+			targetProxy = E726B42EFD40E01273C698C0E76D2E25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		27BABD756B6D2B934033977F8AF16DA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73B6C9DA5B97FA0760C2768AE08D452E /* RSKGrowingTextView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RSKGrowingTextView/RSKGrowingTextView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RSKGrowingTextView/RSKGrowingTextView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RSKGrowingTextView/RSKGrowingTextView.modulemap";
+				PRODUCT_MODULE_NAME = RSKGrowingTextView;
+				PRODUCT_NAME = RSKGrowingTextView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4CAD5AD0A40E305F75BACAA5B13F5745 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F329EBCBAE833247C77CF4C9A03204FF /* Pods-Chat View.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Chat View/Pods-Chat View-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Chat View/Pods-Chat View.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		563D87B3437D2FE9A6A087A929EDCE14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F8DE73D32FE15F0EBE70EB0615F73FF /* RSKPlaceholderTextView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RSKPlaceholderTextView/RSKPlaceholderTextView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RSKPlaceholderTextView/RSKPlaceholderTextView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RSKPlaceholderTextView/RSKPlaceholderTextView.modulemap";
+				PRODUCT_MODULE_NAME = RSKPlaceholderTextView;
+				PRODUCT_NAME = RSKPlaceholderTextView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		64010C9075C9AFC78B1F9452A96152C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73B6C9DA5B97FA0760C2768AE08D452E /* RSKGrowingTextView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RSKGrowingTextView/RSKGrowingTextView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RSKGrowingTextView/RSKGrowingTextView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RSKGrowingTextView/RSKGrowingTextView.modulemap";
+				PRODUCT_MODULE_NAME = RSKGrowingTextView;
+				PRODUCT_NAME = RSKGrowingTextView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		733A6291DCDFAD33E37E8358BBE2FD6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A90A55A821CE6E82BA204F7461DC47DE /* Pods-Chat View.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Chat View/Pods-Chat View-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Chat View/Pods-Chat View.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		78104E0895196E51A1340D67525B60AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F8DE73D32FE15F0EBE70EB0615F73FF /* RSKPlaceholderTextView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RSKPlaceholderTextView/RSKPlaceholderTextView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RSKPlaceholderTextView/RSKPlaceholderTextView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RSKPlaceholderTextView/RSKPlaceholderTextView.modulemap";
+				PRODUCT_MODULE_NAME = RSKPlaceholderTextView;
+				PRODUCT_NAME = RSKPlaceholderTextView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		84A06F28E9E7D9EB0A9B476A8668FD60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		D0FE574C7B3479C6425BC136AA57D8C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0FE574C7B3479C6425BC136AA57D8C2 /* Debug */,
+				84A06F28E9E7D9EB0A9B476A8668FD60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56A433920843ADC7D997E3CB45929E67 /* Build configuration list for PBXNativeTarget "RSKGrowingTextView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64010C9075C9AFC78B1F9452A96152C0 /* Debug */,
+				27BABD756B6D2B934033977F8AF16DA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F543ECBE8090B2EBA79801B8839CCAFF /* Build configuration list for PBXNativeTarget "Pods-Chat View" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CAD5AD0A40E305F75BACAA5B13F5745 /* Debug */,
+				733A6291DCDFAD33E37E8358BBE2FD6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7A20F7A20259DFC5CB3590944C8A15C /* Build configuration list for PBXNativeTarget "RSKPlaceholderTextView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78104E0895196E51A1340D67525B60AB /* Debug */,
+				563D87B3437D2FE9A6A087A929EDCE14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
