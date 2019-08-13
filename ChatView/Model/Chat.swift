@@ -23,9 +23,11 @@ struct Chat: Codable {
     func generateDateFromTimestampString() -> Date? {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        
         if let date = formatter.date(from: timestamp) {
             return date
         }
+        
         return nil
     }
 }

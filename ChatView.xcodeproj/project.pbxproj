@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		072A402D22FD59DC006F772A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 072A402C22FD59DC006F772A /* Podfile */; };
+		072D746123027EC600CE95F5 /* KeyboardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072D746023027EC600CE95F5 /* KeyboardInfo.swift */; };
+		072D746323029B6100CE95F5 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072D746223029B6100CE95F5 /* APIRequest.swift */; };
+		072D746C2302CF6B00CE95F5 /* ChatViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072D746B2302CF6B00CE95F5 /* ChatViewTests.swift */; };
 		0772E46722FD29B70003CBB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0772E46622FD29B70003CBB0 /* AppDelegate.swift */; };
 		0772E46C22FD29B70003CBB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0772E46A22FD29B70003CBB0 /* Main.storyboard */; };
 		0772E46E22FD29B80003CBB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0772E46D22FD29B80003CBB0 /* Assets.xcassets */; };
@@ -29,9 +32,24 @@
 		A669643F4CC853DEA42F1EB1 /* Pods_Chat_View.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67001E5954B402B0C30D193C /* Pods_Chat_View.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		072D746E2302CF6B00CE95F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0772E45B22FD29B70003CBB0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0772E46222FD29B70003CBB0;
+			remoteInfo = "Chat View";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		072A402C22FD59DC006F772A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		0772E46322FD29B70003CBB0 /* Chat View.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat View.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		072D746023027EC600CE95F5 /* KeyboardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardInfo.swift; sourceTree = "<group>"; };
+		072D746223029B6100CE95F5 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		072D74692302CF6B00CE95F5 /* ChatViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		072D746B2302CF6B00CE95F5 /* ChatViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewTests.swift; sourceTree = "<group>"; };
+		072D746D2302CF6B00CE95F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0772E46322FD29B70003CBB0 /* ChatView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0772E46622FD29B70003CBB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0772E46B22FD29B70003CBB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0772E46D22FD29B80003CBB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,6 +75,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		072D74662302CF6B00CE95F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0772E46022FD29B70003CBB0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -68,10 +93,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		072D746A2302CF6B00CE95F5 /* ChatViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				072D746B2302CF6B00CE95F5 /* ChatViewTests.swift */,
+				072D746D2302CF6B00CE95F5 /* Info.plist */,
+			);
+			path = ChatViewTests;
+			sourceTree = "<group>";
+		};
 		0772E45A22FD29B70003CBB0 = {
 			isa = PBXGroup;
 			children = (
-				0772E46522FD29B70003CBB0 /* Chat View */,
+				0772E46522FD29B70003CBB0 /* ChatView */,
+				072D746A2302CF6B00CE95F5 /* ChatViewTests */,
 				0772E46422FD29B70003CBB0 /* Products */,
 				14191605C0C2B7F8011B2CEE /* Pods */,
 				75677ACBADB76461FF42C40F /* Frameworks */,
@@ -81,12 +116,13 @@
 		0772E46422FD29B70003CBB0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0772E46322FD29B70003CBB0 /* Chat View.app */,
+				0772E46322FD29B70003CBB0 /* ChatView.app */,
+				072D74692302CF6B00CE95F5 /* ChatViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0772E46522FD29B70003CBB0 /* Chat View */ = {
+		0772E46522FD29B70003CBB0 /* ChatView */ = {
 			isa = PBXGroup;
 			children = (
 				07B9D9EB22FD62F200B1CA65 /* Services */,
@@ -99,7 +135,7 @@
 				0772E46622FD29B70003CBB0 /* AppDelegate.swift */,
 				0772E47222FD29B80003CBB0 /* Info.plist */,
 			);
-			path = "Chat View";
+			path = ChatView;
 			sourceTree = "<group>";
 		};
 		0772E47822FD2B0B0003CBB0 /* Views */ = {
@@ -141,6 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				07B9D9E922FD623E00B1CA65 /* Chat.swift */,
+				072D746023027EC600CE95F5 /* KeyboardInfo.swift */,
+				072D746223029B6100CE95F5 /* APIRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,9 +211,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0772E46222FD29B70003CBB0 /* Chat View */ = {
+		072D74682302CF6B00CE95F5 /* ChatViewTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0772E47522FD29B80003CBB0 /* Build configuration list for PBXNativeTarget "Chat View" */;
+			buildConfigurationList = 072D74702302CF6B00CE95F5 /* Build configuration list for PBXNativeTarget "ChatViewTests" */;
+			buildPhases = (
+				072D74652302CF6B00CE95F5 /* Sources */,
+				072D74662302CF6B00CE95F5 /* Frameworks */,
+				072D74672302CF6B00CE95F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				072D746F2302CF6B00CE95F5 /* PBXTargetDependency */,
+			);
+			name = ChatViewTests;
+			productName = ChatViewTests;
+			productReference = 072D74692302CF6B00CE95F5 /* ChatViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0772E46222FD29B70003CBB0 /* ChatView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0772E47522FD29B80003CBB0 /* Build configuration list for PBXNativeTarget "ChatView" */;
 			buildPhases = (
 				7D919B173EC6333C5CB3D14D /* [CP] Check Pods Manifest.lock */,
 				0772E45F22FD29B70003CBB0 /* Sources */,
@@ -187,9 +243,9 @@
 			);
 			dependencies = (
 			);
-			name = "Chat View";
+			name = ChatView;
 			productName = "Chat View";
-			productReference = 0772E46322FD29B70003CBB0 /* Chat View.app */;
+			productReference = 0772E46322FD29B70003CBB0 /* ChatView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -202,12 +258,16 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = H;
 				TargetAttributes = {
+					072D74682302CF6B00CE95F5 = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 0772E46222FD29B70003CBB0;
+					};
 					0772E46222FD29B70003CBB0 = {
 						CreatedOnToolsVersion = 10.2;
 					};
 				};
 			};
-			buildConfigurationList = 0772E45E22FD29B70003CBB0 /* Build configuration list for PBXProject "Chat View" */;
+			buildConfigurationList = 0772E45E22FD29B70003CBB0 /* Build configuration list for PBXProject "ChatView" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -220,12 +280,20 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0772E46222FD29B70003CBB0 /* Chat View */,
+				0772E46222FD29B70003CBB0 /* ChatView */,
+				072D74682302CF6B00CE95F5 /* ChatViewTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		072D74672302CF6B00CE95F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0772E46122FD29B70003CBB0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -291,6 +359,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		072D74652302CF6B00CE95F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				072D746C2302CF6B00CE95F5 /* ChatViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0772E45F22FD29B70003CBB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -299,6 +375,7 @@
 				07B9D9E322FD5F8600B1CA65 /* ChatVC.swift in Sources */,
 				07B9D9EA22FD623E00B1CA65 /* Chat.swift in Sources */,
 				07B9D9FA22FD8F8C00B1CA65 /* DateHeaderLabel.swift in Sources */,
+				072D746123027EC600CE95F5 /* KeyboardInfo.swift in Sources */,
 				07B9D9ED22FD630F00B1CA65 /* ChatService.swift in Sources */,
 				07B9D9F022FD892300B1CA65 /* ChatBubbleCell.swift in Sources */,
 				0772E48022FD56C70003CBB0 /* String Extensions.swift in Sources */,
@@ -307,11 +384,20 @@
 				0772E47C22FD56A10003CBB0 /* RandomCodeGenerator.swift in Sources */,
 				0772E46722FD29B70003CBB0 /* AppDelegate.swift in Sources */,
 				07B9D9F222FD893900B1CA65 /* TableBaseCell.swift in Sources */,
+				072D746323029B6100CE95F5 /* APIRequest.swift in Sources */,
 				0772E47F22FD56C70003CBB0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		072D746F2302CF6B00CE95F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0772E46222FD29B70003CBB0 /* ChatView */;
+			targetProxy = 072D746E2302CF6B00CE95F5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0772E46A22FD29B70003CBB0 /* Main.storyboard */ = {
@@ -333,6 +419,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		072D74712302CF6B00CE95F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z45YCKTY4V;
+				INFOPLIST_FILE = ChatViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hnz.ChatViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatView.app/ChatView";
+			};
+			name = Debug;
+		};
+		072D74722302CF6B00CE95F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z45YCKTY4V;
+				INFOPLIST_FILE = ChatViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hnz.ChatViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatView.app/ChatView";
+			};
+			name = Release;
+		};
 		0772E47322FD29B80003CBB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -456,7 +582,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z45YCKTY4V;
-				INFOPLIST_FILE = "Chat View/Info.plist";
+				INFOPLIST_FILE = ChatView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -475,7 +601,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z45YCKTY4V;
-				INFOPLIST_FILE = "Chat View/Info.plist";
+				INFOPLIST_FILE = ChatView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -490,7 +616,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0772E45E22FD29B70003CBB0 /* Build configuration list for PBXProject "Chat View" */ = {
+		072D74702302CF6B00CE95F5 /* Build configuration list for PBXNativeTarget "ChatViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				072D74712302CF6B00CE95F5 /* Debug */,
+				072D74722302CF6B00CE95F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0772E45E22FD29B70003CBB0 /* Build configuration list for PBXProject "ChatView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0772E47322FD29B80003CBB0 /* Debug */,
@@ -499,7 +634,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0772E47522FD29B80003CBB0 /* Build configuration list for PBXNativeTarget "Chat View" */ = {
+		0772E47522FD29B80003CBB0 /* Build configuration list for PBXNativeTarget "ChatView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0772E47622FD29B80003CBB0 /* Debug */,

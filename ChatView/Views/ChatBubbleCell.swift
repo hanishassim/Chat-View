@@ -9,7 +9,7 @@
 import UIKit
 
 class ChatBubbleCell: TableBaseCell {
-    lazy var bubbleView: BubbleView = {
+    fileprivate lazy var bubbleView: BubbleView = {
         let maskView = BubbleView()
         maskView.backgroundColor = .clear
         maskView.clipsToBounds = true
@@ -37,6 +37,7 @@ class ChatBubbleCell: TableBaseCell {
         label.text = "88:88 MM"
         label.textColor = .gray
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.applyHuggingConstraint(isLow: false)
         return label
     }()
     
@@ -56,6 +57,8 @@ class ChatBubbleCell: TableBaseCell {
     fileprivate var timestampLabelLeadingConstraintAlt: NSLayoutConstraint!
     fileprivate var timestampLabelTopConstraint: NSLayoutConstraint!
     fileprivate var timestampLabelTopConstraintAlt: NSLayoutConstraint!
+    
+    fileprivate var maxWidth: CGFloat!
     
     var width: CGFloat!
     
@@ -91,15 +94,6 @@ class ChatBubbleCell: TableBaseCell {
             
             let contentWidth: CGFloat = messageLabel.intrinsicContentSize.width + timestampSpacing + timestampWidth + timestampTrailing + horizontalSides + bubbleTail + bubbleLeading
             
-            if contentWidth > width {
-                let constraintRect = CGSize(width: messageLabel.intrinsicContentSize.width, height: .greatestFiniteMagnitude)
-//                let boundingBox = cellText.boundingRect(
-//                    with: constraintRect,
-//                    options: .usesLineFragmentOrigin,
-//                    attributes: [NSAttributedString.Key.font: messageLabel.font!],
-//                    context: nil)
-            }
-            
             updateChatBubbleConstraints(isLengthyText: contentWidth > width)
         }
     }
@@ -110,11 +104,7 @@ class ChatBubbleCell: TableBaseCell {
         }
     }
     
-    fileprivate var maxWidth: CGFloat!
-    
     override func setupCell() {
-        width = 0.88 * contentView.frame.width
-        
         bubbleView.addSubview(messageLabel)
         bubbleView.addSubview(timestampLabel)
         contentView.addSubview(bubbleView)
@@ -155,11 +145,11 @@ class ChatBubbleCell: TableBaseCell {
             NSLayoutConstraint(item: bubbleView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: -7),
             ])
         
+        width = 0.88 * contentView.frame.width
+        
         bubbleViewWidthConstraint = NSLayoutConstraint(item: bubbleView, attribute: .width, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: width)
         
         NSLayoutConstraint.activate([bubbleViewWidthConstraint])
-        
-        timestampLabel.applyHuggingConstraint(isLow: false)
         
         selectionStyle = .none
         

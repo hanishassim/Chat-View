@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationCenter
 import RSKGrowingTextView
 
 class ChatVC: UIViewController {
@@ -29,9 +30,10 @@ class ChatVC: UIViewController {
         tv.maximumNumberOfLines = 5
         tv.placeholder = "Write a message..."
         tv.placeholderColor = .lightGray
-        tv.backgroundColor = .white
         tv.textContainerInset = UIEdgeInsets(top: 14, left: 16, bottom: 14, right: 16)
         tv.font = UIFont.systemFont(ofSize: 14)
+        tv.growingTextViewDelegate = self
+        tv.backgroundColor = .white
         tv.textColor = .black
         tv.tintColor = accentColor
         tv.isScrollEnabled = true
@@ -51,25 +53,26 @@ class ChatVC: UIViewController {
         button.backgroundColor = .white
         button.isEnabled = false
         button.clipsToBounds = true
+        button.addTarget(self, action: #selector(sendButtonTouchUp(inside:)), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     fileprivate let chatBubbleCellId = "chatBubbleCell"
     fileprivate let chatService = ChatService()
-    fileprivate let bubbleFooterSpacing: CGFloat = 16
+    fileprivate let bubbleFooterSpacing: CGFloat = 32
+    fileprivate var timer: Timer?
+    fileprivate var shouldScrollToBottom: Bool = true
+
+    fileprivate var bottomLayoutGuideTopAndGrowingTextViewBottomVeticalSpaceConstraint: NSLayoutConstraint!
     
-    fileprivate func enableSendButton() {
-        let isTextFieldEmpty = textViewField.text.isEmpty
-        
-        sendButton.isEnabled = !isTextFieldEmpty
-    }
-    
-    var chatTextInput = String() {
+    var chatTextInput: String! {
         didSet {
-            textViewField.text = chatTextInput
-            
-            enableSendButton()
+            DispatchQueue.main.async {
+                self.textViewField.text = self.chatTextInput
+             
+                self.enableSendButton()
+            }
         }
     }
     
@@ -80,6 +83,7 @@ class ChatVC: UIViewController {
     }
     
     var chatsGrouped = [[Chat]]()
+    fileprivate let postRequest = APIRequest(endpoint: "users")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,8 +98,20 @@ class ChatVC: UIViewController {
         chatService.getChatList { (chats) in
             self.chats = chats.chats
         }
+        
+        registerKeyboardNotifications()
     }
-
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if shouldScrollToBottom {
+            shouldScrollToBottom = false
+            
+            scrollToBottom(animated: false)
+        }
+    }
+    
     fileprivate func initTableView(tableView: UITableView) {
         tableView.register(ChatBubbleCell.self, forCellReuseIdentifier: chatBubbleCellId)
         
@@ -117,44 +133,52 @@ class ChatVC: UIViewController {
         
         view.addSubview(sendButton)
         
+        bottomLayoutGuideTopAndGrowingTextViewBottomVeticalSpaceConstraint = NSLayoutConstraint(item: sendButton, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
+        
         NSLayoutConstraint.activate([
             NSLayoutConstraint(item: sendButton, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0),
             NSLayoutConstraint( item: sendButton, attribute: .top, relatedBy: .equal, toItem: textViewField, attribute: .bottom, multiplier: 1, constant: 0),
             NSLayoutConstraint(item: sendButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: sendButton, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0),
+            bottomLayoutGuideTopAndGrowingTextViewBottomVeticalSpaceConstraint,
             
             NSLayoutConstraint(item: sendButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 45),
             ])
     }
     
-    fileprivate func scrollToBottom(animated: Bool) {
-//        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
-//            return
-//        }
-        tableView.reloadData()
-        
-        let section = chatsGrouped.count - 1
-        guard chatsGrouped.indices.contains(section) else {
-            return
-        }
-        
-        let row = chatsGrouped[section].count - 1
-        
-        guard chatsGrouped[section].indices.contains(row) else {
-            return
-        }
-        
-        tableView.scrollToRow(at: IndexPath(row: row, section: section), at: .bottom, animated: animated)
-        tableView.contentOffset.y = tableView.contentOffset.y + bubbleFooterSpacing
+    fileprivate func enableSendButton() {
+        sendButton.isEnabled = !textViewField.text.isEmpty
     }
     
-//    func sendButtonTouchUp(inside sender: Any) {
-//        guard let text = textViewInputMessage.text, text.count > 0 && text.isNotEmpty else {
-//            return
-//        }
-//
-//        POSTMessage(messageType: "TEXT", file: "", message: text)
-//    }
+    fileprivate func initTimer() {
+        guard let chats = chatsGrouped.last, chats[chats.count - 1].direction == .incoming else {
+            return
+        }
+        
+        timer?.invalidate()
+        
+        timer = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+    }
+    
+    @objc func sendButtonTouchUp(inside sender: Any) {
+        guard let message = textViewField.text, message.count > 0 && !message.isEmpty else {
+            return
+        }
+        
+        timer?.invalidate()
+        
+        postRequest.save(message: message) { (result) in
+            switch result {
+            case .success(let chat):
+                self.chats?.append(chat)
+                
+                self.chatTextInput = nil
+                
+                self.initTimer()
+            case .failure(let error):
+                print("An error occured \(error)")
+            }
+        }
+    }
     
     fileprivate func attemptToAssembleGroupedMessages(isPullToRefresh: Bool) {
         chatsGrouped.removeAll()
@@ -176,61 +200,27 @@ class ChatVC: UIViewController {
         }
         
         DispatchQueue.main.async {
-            self.scrollToBottom(animated: false)
-        }
-    }
-}
-
-extension ChatVC: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
-//            return 0
-//        }
-        
-        return chatsGrouped[section].count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
-//            return UITableViewCell()
-//        }
-        
-        let row = indexPath.row
-        
-        let chatDirection = chatsGrouped[indexPath.section][row].direction
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: chatBubbleCellId, for: indexPath) as! ChatBubbleCell
-        
-        cell.direction = chatDirection
-        
-        let messageText = chatsGrouped[indexPath.section][row].message
-        
-        if messageText.trimmingCharacters(in: [" "]).isEmpty {
-            cell.isHidden = true
+            self.tableView.reloadData()
+            
+            self.scrollToBottom(animated: true)
         }
         
-        cell.cellText = messageText
-        cell.timestamp = chatsGrouped[indexPath.section][row].generateDateFromTimestampString()?.printTime()
-        
-        return cell
+        initTimer()
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-//        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
-//            return 0
-//        }
+    func scrollToBottom(animated: Bool) {
+        view.layoutIfNeeded()
         
-        return chatsGrouped.count
+        tableView.setContentOffset(CGPoint(x: 0, y: tableView.contentSize.height - tableView.frame.size.height), animated: animated)
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
-//            return nil
-//        }
-        
+    func bottomOffset() -> CGPoint {
+        return CGPoint(x: 0, y: max(-tableView.contentInset.top, tableView.contentSize.height - tableView.bounds.size.height + tableView.contentInset.bottom))
+    }
+    
+    fileprivate func setupHeaderView(_ section: Int) -> UIView? {
         if let firstMessageInSection = chatsGrouped[section].first, let timestamp = firstMessageInSection.generateDateFromTimestampString() {
-            let label = DateHeaderLabel()
-            label.text = timestamp.printDayAndDate()
+            let label = DateHeaderLabel(text: timestamp.printDayAndDate)
             
             let containerView = UIView()
             containerView.addSubview(label)
@@ -242,10 +232,100 @@ extension ChatVC: UITableViewDataSource {
         return nil
     }
     
+    func registerKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        adjustContentForKeyboard(shown: true, notification: notification)
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        adjustContentForKeyboard(shown: false, notification: notification)
+    }
+    
+    func adjustContentForKeyboard(shown: Bool, notification: Notification) {
+        guard let payload = KeyboardInfo(notification) else { return }
+        
+        let keyboardHeight = shown ? payload.frameEnd.size.height : 0
+        
+        bottomLayoutGuideTopAndGrowingTextViewBottomVeticalSpaceConstraint.constant = -keyboardHeight
+        
+        if tableView.contentInset.bottom == keyboardHeight {
+            return
+        }
+        
+        let distanceFromBottom = bottomOffset().y - tableView.contentOffset.y
+        
+        var insets = tableView.contentInset
+        insets.bottom = keyboardHeight
+        
+        UIView.animate(withDuration: payload.animationDuration, delay: 0, options: payload.animationOption, animations: {
+            
+            self.tableView.contentInset = insets
+            self.tableView.scrollIndicatorInsets = insets
+            
+            if distanceFromBottom < 10 {
+                self.tableView.contentOffset = self.bottomOffset()
+            }
+            
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+        if !shown {
+            scrollToBottom(animated: true)
+        }
+    }
+    
+    @objc func fireTimer() {
+        let chat = Chat.init(timestamp: Date().formattedDateString, direction: .incoming, message: "Are you there?")
+        
+        chats?.append(chat)
+    }
+}
+
+extension ChatVC: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return chatsGrouped.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return chatsGrouped[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let row = indexPath.row
+        let section = indexPath.section
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: chatBubbleCellId, for: indexPath) as! ChatBubbleCell
+        
+        cell.direction = chatsGrouped[section][row].direction
+        
+        let messageText = chatsGrouped[section][row].message
+        
+        if messageText.trimmingCharacters(in: [" "]).isEmpty {
+            cell.isHidden = true
+        }
+        
+        cell.cellText = messageText
+        cell.timestamp = chatsGrouped[section][row].generateDateFromTimestampString()?.printTime()
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return setupHeaderView(section)
+    }
+    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let lastSection = chatsGrouped.count - 1
+        
         let view = UIView()
         view.isUserInteractionEnabled = false
-        return view
+        
+        return section == lastSection ? view : nil
     }
 }
 
@@ -255,14 +335,8 @@ extension ChatVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        guard let chatsGrouped = chatsGrouped, chatsGrouped.count > 0 else {
-//            return
-//        }
-        
-        let chatDirection = chatsGrouped[indexPath.section][indexPath.row].direction
-        
         if let cell = cell as? ChatBubbleCell {
-            cell.direction = chatDirection
+            cell.direction = chatsGrouped[indexPath.section][indexPath.row].direction
         }
     }
     
@@ -271,7 +345,9 @@ extension ChatVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return bubbleFooterSpacing
+        let lastSection = chatsGrouped.count - 1
+        
+        return section == lastSection ? 50 : 0
     }
 }
 
@@ -280,5 +356,11 @@ extension ChatVC: UITextViewDelegate {
         if textView == textViewField {
             enableSendButton()
         }
+    }
+}
+
+extension ChatVC: RSKGrowingTextViewDelegate {
+    func growingTextView(_ textView: RSKGrowingTextView, didChangeHeightFrom growingTextViewHeightBegin: CGFloat, to growingTextViewHeightEnd: CGFloat) {
+        scrollToBottom(animated: true)
     }
 }

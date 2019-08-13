@@ -19,6 +19,12 @@ class DateHeaderLabel: UILabel {
         return CGSize(width: originalIntrinsicContentSize.width + 36, height: height)
     }
     
+    convenience init(text: String?) {
+        self.init(frame: CGRect.zero)
+
+        self.text = text
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

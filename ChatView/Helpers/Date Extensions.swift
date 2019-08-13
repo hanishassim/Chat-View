@@ -23,16 +23,8 @@ extension Date {
         return Calendar.current.isDate(self, equalTo: date, toGranularity: .year)
     }
     
-    func printDayAndDate() -> String {
-        let dateFormatterPrint = DateFormatter()
-        
-        var dateFormat = "E, d MMM"
-        if !self.isInSameYear(date: Date()) {
-            dateFormat += " yyyy"
-        }
-        dateFormatterPrint.dateFormat = dateFormat
-        
-        return dateFormatterPrint.string(from: self)
+    func isInSameWeek(date: Date) -> Bool {
+        return Calendar.current.isDate(self, equalTo: date, toGranularity: .weekOfYear)
     }
     
     func printTime() -> String {
@@ -42,5 +34,39 @@ extension Date {
         dateFormatterPrint.dateFormat = dateFormat
         
         return dateFormatterPrint.string(from: self)
+    }
+    
+    var printDayAndDate: String {
+        guard !Calendar.current.isDateInToday(self) else {
+            return "Today"
+        }
+        
+        guard !Calendar.current.isDateInYesterday(self) else {
+            return "Yesterday"
+        }
+        
+        let dateFormatterPrint = DateFormatter()
+        
+        
+        var dateFormat = "EE"
+        
+        if !Date().isInSameWeek(date: self) {
+            dateFormat += ", d MMM"
+            
+            if !Date().isInSameYear(date: self) {
+                dateFormat += " yyyy"
+            }
+        }
+        
+        dateFormatterPrint.dateFormat = dateFormat
+        
+        return dateFormatterPrint.string(from: self)
+    }
+    
+    var formattedDateString: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        
+        return formatter.string(from: self)
     }
 }
