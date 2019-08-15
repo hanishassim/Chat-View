@@ -28,7 +28,7 @@ class ChatViewTests: XCTestCase {
         let expectedMessage = "Hello World"
         
         // Define expectation
-        let resultExpectation = expectation(description: "APIRequest does sendMesage and runs the callback closure")
+        let promise = expectation(description: "APIRequest does sendMesage and runs the callback closure")
         
         // Run code
         APIRequest(endpoint: "users").send(message: expectedMessage) { (result) in
@@ -37,7 +37,7 @@ class ChatViewTests: XCTestCase {
                 XCTAssertEqual(chat.message, expectedMessage)
                 
                 // Fulfill expectation in callback
-                resultExpectation.fulfill()
+                promise.fulfill()
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }

@@ -155,7 +155,7 @@ class ChatVC: UIViewController {
         
         timer?.invalidate()
         
-        timer = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
     }
     
     @objc func sendButtonTouchUp(inside sender: Any) {
