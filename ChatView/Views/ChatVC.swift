@@ -145,7 +145,9 @@ class ChatVC: UIViewController {
     }
     
     fileprivate func enableSendButton() {
-        sendButton.isEnabled = !textViewField.text.isEmpty
+        DispatchQueue.main.async {
+            self.sendButton.isEnabled = !self.textViewField.text.isEmpty
+        }
     }
     
     fileprivate func initTimer() {
@@ -159,13 +161,15 @@ class ChatVC: UIViewController {
     }
     
     @objc func sendButtonTouchUp(inside sender: Any) {
-        guard let message = textViewField.text, message.count > 0 && !message.isEmpty else {
+        guard let message = textViewField.text, !message.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
             return
         }
         
+        sendButton.isEnabled = false
+        
         timer?.invalidate()
         
-        postRequest.send(message: message) { (result) in
+        postRequest.send(message: message.trimmingCharacters(in: .whitespacesAndNewlines)) { (result) in
             switch result {
             case .success(let chat):
                 self.chats?.append(chat)
@@ -176,6 +180,8 @@ class ChatVC: UIViewController {
             case .failure(let error):
                 print("An error occured \(error)")
             }
+            
+            self.enableSendButton()
         }
     }
     

@@ -14,9 +14,8 @@ extension Date {
         let month = calendar.component(.month, from: self)
         let day = calendar.component(.day, from: self)
         let year = calendar.component(.year, from: self)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        return dateFormatter.date(from: "\(month)/\(day)/\(year)") ?? Date()
+        formatter.dateFormat = "MM/dd/yyyy"
+        return formatter.date(from: "\(month)/\(day)/\(year)") ?? Date()
     }
     
     func isInSameYear(date: Date) -> Bool {
@@ -28,12 +27,10 @@ extension Date {
     }
     
     func printTime() -> String {
-        let dateFormatterPrint = DateFormatter()
-        
         let dateFormat = "h:mm a"
-        dateFormatterPrint.dateFormat = dateFormat
+        formatter.dateFormat = dateFormat
         
-        return dateFormatterPrint.string(from: self)
+        return formatter.string(from: self)
     }
     
     var printDayAndDate: String {
@@ -45,7 +42,6 @@ extension Date {
             return "Yesterday"
         }
         
-        let dateFormatterPrint = DateFormatter()
         var dateFormat = "EE"
         
         if !Date().isInSameWeek(date: self) {
@@ -56,13 +52,12 @@ extension Date {
             }
         }
         
-        dateFormatterPrint.dateFormat = dateFormat
+        formatter.dateFormat = dateFormat
         
-        return dateFormatterPrint.string(from: self)
+        return formatter.string(from: self)
     }
     
     var formattedDateString: String {
-        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         
         return formatter.string(from: self)

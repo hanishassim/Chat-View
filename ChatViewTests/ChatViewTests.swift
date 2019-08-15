@@ -10,8 +10,6 @@ import XCTest
 @testable import ChatView
 
 class ChatViewTests: XCTestCase {
-    let formatter = DateFormatter()
-    
     func testTimeAgoString() {
         let date1 = "2018-06-03T09:15:00.000Z"
         var dateDiffYear = convertTo8601(dateInString: date1)

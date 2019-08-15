@@ -25,7 +25,11 @@ class ChatViewUITests: XCTestCase {
         let exists = NSPredicate(format: "exists == 1")
         expectation(for: exists, evaluatedWith: aytChatText, handler: nil)
         
-        waitForExpectations(timeout: 60, handler: nil)
+        waitForExpectations(timeout: 63) { error in
+            if let error = error {
+                XCTFail("waitForExpectationsWithTimeout: \(error)")
+            }
+        }
         XCTAssert(aytChatText.exists)
     }
     
@@ -43,7 +47,11 @@ class ChatViewUITests: XCTestCase {
         
         app.buttons["Send"].tap()
         
-        waitForExpectations(timeout: 3, handler: nil)
+        waitForExpectations(timeout: 3) { error in
+            if let error = error {
+                XCTFail("waitForExpectationsWithTimeout: \(error)")
+            }
+        }
         XCTAssert(testChatText.exists)
     }
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 
+// To conform to the format for json data
 struct Root: Decodable {
     private enum CodingKeys: String, CodingKey {
         case chats = "chat"
@@ -21,7 +22,6 @@ struct Chat: Codable {
     let message: String
     
     func generateDateFromTimestampString() -> Date? {
-        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         
         if let date = formatter.date(from: timestamp) {

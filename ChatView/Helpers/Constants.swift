@@ -9,6 +9,7 @@
 import Foundation
 
 let accentColor = "#E21415".hexToUIColor()
+let formatter = DateFormatter()
 
 extension Notification.Name {
     static let DidSaveContactInfo = Notification.Name("DidSaveContactInfo")
