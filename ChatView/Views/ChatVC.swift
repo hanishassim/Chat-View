@@ -59,7 +59,6 @@ class ChatVC: UIViewController {
     }()
     
     fileprivate let chatBubbleCellId = "chatBubbleCell"
-    fileprivate let chatService = ChatService()
     fileprivate let bubbleFooterSpacing: CGFloat = 32
     fileprivate var timer: Timer?
     fileprivate var shouldScrollToBottom: Bool = true
@@ -95,7 +94,7 @@ class ChatVC: UIViewController {
         
         enableSendButton()
         
-        chatService.getChatList { (chats) in
+        ChatService.shared.getChatList { (chats) in
             self.chats = chats.chats
         }
         
@@ -166,7 +165,7 @@ class ChatVC: UIViewController {
         
         timer?.invalidate()
         
-        postRequest.save(message: message) { (result) in
+        postRequest.send(message: message) { (result) in
             switch result {
             case .success(let chat):
                 self.chats?.append(chat)

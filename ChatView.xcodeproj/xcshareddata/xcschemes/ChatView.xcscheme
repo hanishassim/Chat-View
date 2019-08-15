@@ -38,6 +38,16 @@
                ReferencedContainer = "container:ChatView.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "07FAC0982304F43E00FD0BE6"
+               BuildableName = "ChatViewUITests.xctest"
+               BlueprintName = "ChatViewUITests"
+               ReferencedContainer = "container:ChatView.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

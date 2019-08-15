@@ -29,7 +29,7 @@ struct APIRequest {
         self.resourceURL = resourceURL
     }
     
-    func save(message: String, completion: @escaping(Result<Chat, APIError>) -> Void) {
+    func send(message: String, completion: @escaping(Result<Chat, APIError>) -> Void) {
         do {
             var urlRequest = URLRequest.init(url: resourceURL)
             urlRequest.httpMethod = "POST"

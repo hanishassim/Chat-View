@@ -9,6 +9,10 @@
 import Foundation
 
 class ChatService {
+    static let shared = ChatService()
+    
+    private init() { }
+    
     // MARK: - ContactInfo getter and setter functions
     func getChatList(completion: chatListCompletion) {
         loadBundleJSON(completion: { (chats) in

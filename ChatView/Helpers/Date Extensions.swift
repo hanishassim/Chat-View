@@ -46,8 +46,6 @@ extension Date {
         }
         
         let dateFormatterPrint = DateFormatter()
-        
-        
         var dateFormat = "EE"
         
         if !Date().isInSameWeek(date: self) {
