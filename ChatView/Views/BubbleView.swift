@@ -9,15 +9,15 @@
 import UIKit
 
 class BubbleView: UIView {
+    fileprivate let incomingColor = UIColor(white: 0.9, alpha: 1)
+    fileprivate let outgoingColor = accentColor
+    
     var direction = ChatDirection.incoming {
         didSet {
-            // isIncoming was set, so tell the system a redraw is needed.
+            // direction was set, so tell the system a redraw is needed.
             setNeedsDisplay()
         }
     }
-    
-    fileprivate let incomingColor = UIColor(white: 0.9, alpha: 1)
-    fileprivate let outgoingColor = accentColor
     
     override func draw(_ rect: CGRect) {
         let width = rect.width

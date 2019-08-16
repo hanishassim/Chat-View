@@ -65,7 +65,7 @@ struct APIRequest {
                     completion(.failure(.serialization))
                 }
             }
-             dataTask.resume()
+            dataTask.resume()
         } catch {
             completion(.failure(.encoding))
         }

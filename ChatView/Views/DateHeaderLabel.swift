@@ -21,7 +21,7 @@ class DateHeaderLabel: UILabel {
     
     convenience init(text: String?) {
         self.init(frame: CGRect.zero)
-
+        
         self.text = text
     }
     

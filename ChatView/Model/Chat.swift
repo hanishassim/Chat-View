@@ -8,12 +8,9 @@
 
 import Foundation
 
-// To conform to the format for json data
-struct Root: Decodable {
-    private enum CodingKeys: String, CodingKey {
-        case chats = "chat"
-    }
-    let chats: [Chat]
+enum ChatDirection: String, Codable {
+    case incoming = "INCOMING"
+    case outgoing = "OUTGOING"
 }
 
 struct Chat: Codable {
@@ -30,4 +27,12 @@ struct Chat: Codable {
         
         return nil
     }
+}
+
+// Struct Root - To conform to the format for json data
+struct Root: Decodable {
+    private enum CodingKeys: String, CodingKey {
+        case chats = "chat"
+    }
+    let chats: [Chat]
 }

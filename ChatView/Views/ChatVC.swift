@@ -60,16 +60,17 @@ class ChatVC: UIViewController {
     
     fileprivate let chatBubbleCellId = "chatBubbleCell"
     fileprivate let bubbleFooterSpacing: CGFloat = 32
-    fileprivate var timer: Timer?
+    fileprivate let postRequest = APIRequest(endpoint: "users")
     fileprivate var shouldScrollToBottom: Bool = true
-
+    fileprivate var chatsGrouped = [[Chat]]()
+    fileprivate var timer: Timer?
     fileprivate var bottomLayoutGuideTopAndGrowingTextViewBottomVeticalSpaceConstraint: NSLayoutConstraint!
     
     var chatTextInput: String! {
         didSet {
             DispatchQueue.main.async {
                 self.textViewField.text = self.chatTextInput
-             
+                
                 self.enableSendButton()
             }
         }
@@ -80,9 +81,6 @@ class ChatVC: UIViewController {
             attemptToAssembleGroupedMessages(isPullToRefresh: false)
         }
     }
-    
-    var chatsGrouped = [[Chat]]()
-    fileprivate let postRequest = APIRequest(endpoint: "users")
     
     override func viewDidLoad() {
         super.viewDidLoad()

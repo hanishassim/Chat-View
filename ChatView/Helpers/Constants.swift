@@ -11,13 +11,8 @@ import Foundation
 let accentColor = "#E21415".hexToUIColor()
 let formatter = DateFormatter()
 
-extension Notification.Name {
-    static let DidSaveContactInfo = Notification.Name("DidSaveContactInfo")
-}
-
 typealias chatListCompletion = (_ chats: Root) -> Void
 
-enum ChatDirection: String, Codable {
-    case incoming = "INCOMING"
-    case outgoing = "OUTGOING"
+extension Notification.Name {
+    static let DidSaveContactInfo = Notification.Name("DidSaveContactInfo")
 }
